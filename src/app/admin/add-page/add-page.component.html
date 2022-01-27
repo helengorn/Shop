@@ -1,0 +1,54 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h2>Add product</h2>
+
+  <div class="form-control">
+    <label for="type">Type:</label>
+    <input id="type" type="type" formControlName="type"/>
+    <!--    <pre>{{form.get('type')!.errors | json}}</pre>-->
+
+    <div *ngIf="form.get('type')!.touched && form.get('type')!.invalid" class="validation">
+      <small *ngIf="form.get('type')!.errors!['required']">Enter type</small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label for="title">Name:</label>
+    <input id="title" type="title" formControlName="title"/>
+    <!--    <pre>{{form.get('title')!.errors | json}}</pre>-->
+
+    <div *ngIf="form.get('title')!.touched && form.get('title')!.invalid" class="validation">
+      <small *ngIf="form.get('title')!.errors!['required']">Enter title</small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label for="photo">Photo:</label>
+    <!--    <pre>{{form.get('photo')!.errors | json}}</pre>-->
+
+    <div *ngIf="form.get('photo')!.touched && form.get('photo')!.invalid" class="validation">
+      <small *ngIf="form.get('photo')!.errors!['required']">Enter photo</small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label for="info">Information:</label>
+    <!--    <pre>{{form.get('info')!.errors | json}}</pre>-->
+
+    <div *ngIf="form.get('info')!.touched && form.get('info')!.invalid" class="validation">
+      <small *ngIf="form.get('info')!.errors!['required']">Enter info</small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label for="price">Price:</label>
+    <input id="price" type="price" formControlName="price"/>
+    <!--    <pre>{{form.get('price')!.errors | json}}</pre>-->
+
+    <div *ngIf="form.get('price')!.touched && form.get('price')!.invalid" class="validation">
+      <small *ngIf="form.get('price')!.errors!['required']">Enter price</small>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid || submitted">Add</button>
+
+</form>
