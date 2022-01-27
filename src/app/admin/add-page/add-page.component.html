@@ -23,7 +23,7 @@
 
   <div class="form-control">
     <label for="photo">Photo:</label>
-    <!--    <pre>{{form.get('photo')!.errors | json}}</pre>-->
+    <!--   <pre>{{form.get('photo')!.errors | json}}</pre>-->
 
     <div *ngIf="form.get('photo')!.touched && form.get('photo')!.invalid" class="validation">
       <small *ngIf="form.get('photo')!.errors!['required']">Enter photo</small>
